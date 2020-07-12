@@ -52,3 +52,25 @@ function detectPersonalLevel() {
 detectPersonalLevel();
 
 
+function showMyDB(hiden) {
+    if (!hiden) {
+        console.log(personalMovieDB.privat);
+    }
+}
+
+showMyDB(personalMovieDB.privat);
+
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        let answer = prompt(`выш любиммый жаннер под номером ${i}`);
+        if (answer != "" && answer != null) {
+            personalMovieDB.genres[i - 1] = answer;
+        } else {
+            i--;
+        }
+    }
+}
+writeYourGenres();
+
+
