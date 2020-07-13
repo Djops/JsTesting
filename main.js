@@ -30,12 +30,14 @@ let personalMovieDB = {
         }
     },
     writeYourGenres: function () {
-        for (let i = 1; i <= 3; i++) {
-            let answer = prompt(`выш любиммый жаннер под номером ${i}`);
-            if (answer != "" && answer != null) {
-                personalMovieDB.genres[i - 1] = answer;
+        for (let i = 1; i < 2; i++) {
+            let geners = prompt(`выш любиммый жаннер`).toLowerCase();
+            if (geners === "" || geners == null) {
+            i--;
+
             } else {
-                i--;
+                personalMovieDB.genres = geners.split(",");
+                personalMovieDB.genres.sort();
             }
         }
 
@@ -60,8 +62,7 @@ let personalMovieDB = {
     },
 };
 
-personalMovieDB.showMyDB()
-personalMovieDB.writeYourGenres()
+
 
 
 
